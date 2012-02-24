@@ -13,6 +13,10 @@
 		1B13466A14F7A3530029CB60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B13466814F7A3530029CB60 /* InfoPlist.strings */; };
 		1B13466C14F7A3530029CB60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13466B14F7A3530029CB60 /* main.m */; };
 		1B13467014F7A3530029CB60 /* SFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13466F14F7A3530029CB60 /* SFAppDelegate.m */; };
+		1B13468514F7C13B0029CB60 /* SFContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13468414F7C13B0029CB60 /* SFContainerViewController.m */; };
+		1B13468814F7C19C0029CB60 /* SFRandomContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13468714F7C19C0029CB60 /* SFRandomContainerViewController.m */; };
+		1B13468B14F7C6A30029CB60 /* SFRandomContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13468A14F7C6A30029CB60 /* SFRandomContainerView.m */; };
+		1B13468E14F7C87E0029CB60 /* SFLoggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13468D14F7C87E0029CB60 /* SFLoggingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +24,20 @@
 		1B13465F14F7A3530029CB60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1B13466114F7A3530029CB60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B13466314F7A3530029CB60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1B13466714F7A3530029CB60 /* SFContainerViewController-Info.plist */ = {isa = PBXFileReference; path = "SFContainerViewController-Info.plist"; sourceTree = "<group>"; };
+		1B13466714F7A3530029CB60 /* SFContainerViewController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SFContainerViewController-Info.plist"; sourceTree = "<group>"; };
 		1B13466914F7A3530029CB60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B13466B14F7A3530029CB60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1B13466D14F7A3530029CB60 /* SFContainerViewController-Prefix.pch */ = {isa = PBXFileReference; path = "SFContainerViewController-Prefix.pch"; sourceTree = "<group>"; };
-		1B13466E14F7A3530029CB60 /* SFAppDelegate.h */ = {isa = PBXFileReference; path = SFAppDelegate.h; sourceTree = "<group>"; };
+		1B13466D14F7A3530029CB60 /* SFContainerViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFContainerViewController-Prefix.pch"; sourceTree = "<group>"; };
+		1B13466E14F7A3530029CB60 /* SFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFAppDelegate.h; sourceTree = "<group>"; };
 		1B13466F14F7A3530029CB60 /* SFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFAppDelegate.m; sourceTree = "<group>"; };
+		1B13468314F7C13B0029CB60 /* SFContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFContainerViewController.h; sourceTree = "<group>"; };
+		1B13468414F7C13B0029CB60 /* SFContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFContainerViewController.m; sourceTree = "<group>"; };
+		1B13468614F7C19C0029CB60 /* SFRandomContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRandomContainerViewController.h; sourceTree = "<group>"; };
+		1B13468714F7C19C0029CB60 /* SFRandomContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRandomContainerViewController.m; sourceTree = "<group>"; };
+		1B13468914F7C6A30029CB60 /* SFRandomContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRandomContainerView.h; sourceTree = "<group>"; };
+		1B13468A14F7C6A30029CB60 /* SFRandomContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRandomContainerView.m; sourceTree = "<group>"; };
+		1B13468C14F7C87E0029CB60 /* SFLoggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFLoggingViewController.h; path = SFContainerViewController/SFLoggingViewController.h; sourceTree = SOURCE_ROOT; };
+		1B13468D14F7C87E0029CB60 /* SFLoggingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFLoggingViewController.m; path = SFContainerViewController/SFLoggingViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +84,16 @@
 		1B13466514F7A3530029CB60 /* SFContainerViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1B13468214F7C13B0029CB60 /* ContainerViewController */,
+				1B13468C14F7C87E0029CB60 /* SFLoggingViewController.h */,
+				1B13468D14F7C87E0029CB60 /* SFLoggingViewController.m */,
 				1B13466E14F7A3530029CB60 /* SFAppDelegate.h */,
 				1B13466F14F7A3530029CB60 /* SFAppDelegate.m */,
 				1B13466614F7A3530029CB60 /* Supporting Files */,
+				1B13468614F7C19C0029CB60 /* SFRandomContainerViewController.h */,
+				1B13468714F7C19C0029CB60 /* SFRandomContainerViewController.m */,
+				1B13468914F7C6A30029CB60 /* SFRandomContainerView.h */,
+				1B13468A14F7C6A30029CB60 /* SFRandomContainerView.m */,
 			);
 			path = SFContainerViewController;
 			sourceTree = "<group>";
@@ -88,6 +107,16 @@
 				1B13466D14F7A3530029CB60 /* SFContainerViewController-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B13468214F7C13B0029CB60 /* ContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B13468314F7C13B0029CB60 /* SFContainerViewController.h */,
+				1B13468414F7C13B0029CB60 /* SFContainerViewController.m */,
+			);
+			name = ContainerViewController;
+			path = ../../ContainerViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +182,10 @@
 			files = (
 				1B13466C14F7A3530029CB60 /* main.m in Sources */,
 				1B13467014F7A3530029CB60 /* SFAppDelegate.m in Sources */,
+				1B13468514F7C13B0029CB60 /* SFContainerViewController.m in Sources */,
+				1B13468814F7C19C0029CB60 /* SFRandomContainerViewController.m in Sources */,
+				1B13468B14F7C6A30029CB60 /* SFRandomContainerView.m in Sources */,
+				1B13468E14F7C87E0029CB60 /* SFLoggingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +289,7 @@
 				1B13467514F7A3530029CB60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
