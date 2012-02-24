@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B13466014F7A3530029CB60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B13465F14F7A3530029CB60 /* UIKit.framework */; };
+		1B13466214F7A3530029CB60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B13466114F7A3530029CB60 /* Foundation.framework */; };
+		1B13466414F7A3530029CB60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B13466314F7A3530029CB60 /* CoreGraphics.framework */; };
+		1B13466A14F7A3530029CB60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B13466814F7A3530029CB60 /* InfoPlist.strings */; };
+		1B13466C14F7A3530029CB60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13466B14F7A3530029CB60 /* main.m */; };
+		1B13467014F7A3530029CB60 /* SFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B13466F14F7A3530029CB60 /* SFAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B13465B14F7A3530029CB60 /* SFContainerViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFContainerViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B13465F14F7A3530029CB60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1B13466114F7A3530029CB60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B13466314F7A3530029CB60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1B13466714F7A3530029CB60 /* SFContainerViewController-Info.plist */ = {isa = PBXFileReference; path = "SFContainerViewController-Info.plist"; sourceTree = "<group>"; };
+		1B13466914F7A3530029CB60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B13466B14F7A3530029CB60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B13466D14F7A3530029CB60 /* SFContainerViewController-Prefix.pch */ = {isa = PBXFileReference; path = "SFContainerViewController-Prefix.pch"; sourceTree = "<group>"; };
+		1B13466E14F7A3530029CB60 /* SFAppDelegate.h */ = {isa = PBXFileReference; path = SFAppDelegate.h; sourceTree = "<group>"; };
+		1B13466F14F7A3530029CB60 /* SFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B13465814F7A3530029CB60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B13466014F7A3530029CB60 /* UIKit.framework in Frameworks */,
+				1B13466214F7A3530029CB60 /* Foundation.framework in Frameworks */,
+				1B13466414F7A3530029CB60 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B13465014F7A3530029CB60 = {
+			isa = PBXGroup;
+			children = (
+				1B13466514F7A3530029CB60 /* SFContainerViewController */,
+				1B13465E14F7A3530029CB60 /* Frameworks */,
+				1B13465C14F7A3530029CB60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B13465C14F7A3530029CB60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B13465B14F7A3530029CB60 /* SFContainerViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B13465E14F7A3530029CB60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B13465F14F7A3530029CB60 /* UIKit.framework */,
+				1B13466114F7A3530029CB60 /* Foundation.framework */,
+				1B13466314F7A3530029CB60 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B13466514F7A3530029CB60 /* SFContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B13466E14F7A3530029CB60 /* SFAppDelegate.h */,
+				1B13466F14F7A3530029CB60 /* SFAppDelegate.m */,
+				1B13466614F7A3530029CB60 /* Supporting Files */,
+			);
+			path = SFContainerViewController;
+			sourceTree = "<group>";
+		};
+		1B13466614F7A3530029CB60 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B13466714F7A3530029CB60 /* SFContainerViewController-Info.plist */,
+				1B13466814F7A3530029CB60 /* InfoPlist.strings */,
+				1B13466B14F7A3530029CB60 /* main.m */,
+				1B13466D14F7A3530029CB60 /* SFContainerViewController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B13465A14F7A3530029CB60 /* SFContainerViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B13467314F7A3530029CB60 /* Build configuration list for PBXNativeTarget "SFContainerViewController" */;
+			buildPhases = (
+				1B13465714F7A3530029CB60 /* Sources */,
+				1B13465814F7A3530029CB60 /* Frameworks */,
+				1B13465914F7A3530029CB60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SFContainerViewController;
+			productName = SFContainerViewController;
+			productReference = 1B13465B14F7A3530029CB60 /* SFContainerViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B13465214F7A3530029CB60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 1B13465514F7A3530029CB60 /* Build configuration list for PBXProject "SFContainerViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B13465014F7A3530029CB60;
+			productRefGroup = 1B13465C14F7A3530029CB60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B13465A14F7A3530029CB60 /* SFContainerViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B13465914F7A3530029CB60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B13466A14F7A3530029CB60 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B13465714F7A3530029CB60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B13466C14F7A3530029CB60 /* main.m in Sources */,
+				1B13467014F7A3530029CB60 /* SFAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1B13466814F7A3530029CB60 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B13466914F7A3530029CB60 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B13467114F7A3530029CB60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B13467214F7A3530029CB60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B13467414F7A3530029CB60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SFContainerViewController/SFContainerViewController-Prefix.pch";
+				INFOPLIST_FILE = "SFContainerViewController/SFContainerViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1B13467514F7A3530029CB60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SFContainerViewController/SFContainerViewController-Prefix.pch";
+				INFOPLIST_FILE = "SFContainerViewController/SFContainerViewController-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B13465514F7A3530029CB60 /* Build configuration list for PBXProject "SFContainerViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B13467114F7A3530029CB60 /* Debug */,
+				1B13467214F7A3530029CB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B13467314F7A3530029CB60 /* Build configuration list for PBXNativeTarget "SFContainerViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B13467414F7A3530029CB60 /* Debug */,
+				1B13467514F7A3530029CB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B13465214F7A3530029CB60 /* Project object */;
+}
