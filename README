@@ -26,4 +26,7 @@
 SFContainerViewController is a UIViewController subclass that can have multiple UIViewController children. No memory problems, if this controller is not visible, it will unload its view and all of his children views.
 From the children view you can use freely navigationController, parentViewController ( will point to container itself ), interfaceOrientation.
 
-In children controllers you do not to handle special cases, or call special functions, 'it just works'.
+In children controllers you do not have to handle special cases, or call special functions, 'it just works'.
+
+To use it:
+Just subclass from SFContainerViewController, set viewControllers to your selected controllers, implement loadView so that you can have your own view to layout your controllers.
