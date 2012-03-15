@@ -1,6 +1,62 @@
 //  Created by Krzysztof Zablocki on 8/26/11.
 //  Copyright (c) 2011 private. All rights reserved.
 
+//  ARC Helper
+//
+//  Version 1.2.2
+//
+//  Created by Nick Lockwood on 05/01/2012.
+//  Copyright 2012 Charcoal Design
+//
+//  Distributed under the permissive zlib license
+//  Get the latest version from here:
+//
+//  https://gist.github.com/1563325
+
+//  Krzysztof Zabłocki Added AH_BRIDGE(x) to bridge cast to void*
+
+#ifndef AH_RETAIN
+#if __has_feature(objc_arc)
+#define AH_RETAIN(x) (x)
+#define AH_RELEASE(x) (void)(x)
+#define AH_AUTORELEASE(x) (x)
+#define AH_SUPER_DEALLOC (void)(0)
+#define AH_BRIDGE(x) ((__bridge void*)x)
+#else
+#define __AH_WEAK
+#define AH_WEAK assign
+#define AH_RETAIN(x) [(x) retain]
+#define AH_RELEASE(x) [(x) release]
+#define AH_AUTORELEASE(x) [(x) autorelease]
+#define AH_SUPER_DEALLOC [super dealloc]
+#define AH_BRIDGE(x) (x)
+#endif
+#endif
+
+//  Weak reference support
+
+#ifndef AH_WEAK
+#if defined __IPHONE_OS_VERSION_MIN_REQUIRED
+#if __IPHONE_OS_VERSION_MIN_REQUIRED > __IPHONE_4_3
+#define __AH_WEAK __weak
+#define AH_WEAK weak
+#else
+#define __AH_WEAK __unsafe_unretained
+#define AH_WEAK unsafe_unretained
+#endif
+#elif defined __MAC_OS_X_VERSION_MIN_REQUIRED
+#if __MAC_OS_X_VERSION_MIN_REQUIRED > __MAC_10_6
+#define __AH_WEAK __weak
+#define AH_WEAK weak
+#else
+#define __AH_WEAK __unsafe_unretained
+#define AH_WEAK unsafe_unretained
+#endif
+#endif
+#endif
+
+//  ARC Helper ends
+
 
 #import "SFContainerViewController.h"
 #import <objc/runtime.h>
@@ -42,7 +98,7 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 {
   //! remove association just in case
   [self setViewControllers:nil];
-  [super dealloc];
+  AH_SUPER_DEALLOC;
 }
 
 - (void)didReceiveMemoryWarning
@@ -138,15 +194,15 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
   if (aViewControllers != viewControllers) {
     //! remove association from old view controllers
     for (UIViewController *viewController in viewControllers) {
-      objc_setAssociatedObject(viewController, SFContainerViewControllerParentControllerKey, nil, OBJC_ASSOCIATION_ASSIGN);
+      objc_setAssociatedObject(viewController, AH_BRIDGE(SFContainerViewControllerParentControllerKey), nil, OBJC_ASSOCIATION_ASSIGN);
     }      
     
-    [viewControllers release];
+    AH_RELEASE(viewControllers);
     viewControllers = [[NSArray arrayWithArray:aViewControllers] retain];
     
     //! add association in new view controllers
     for (UIViewController *viewController in viewControllers) {
-      objc_setAssociatedObject(viewController, SFContainerViewControllerParentControllerKey, self, OBJC_ASSOCIATION_ASSIGN);
+      objc_setAssociatedObject(viewController, AH_BRIDGE(SFContainerViewControllerParentControllerKey), self, OBJC_ASSOCIATION_ASSIGN);
     }
   }
 }
@@ -154,7 +210,7 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 #pragma mark - UIViewController additional methods
 - (UINavigationController*)swappedNavigationController
 {
-  UIViewController *parentController = objc_getAssociatedObject(self, SFContainerViewControllerParentControllerKey);
+  UIViewController *parentController = objc_getAssociatedObject(self, AH_BRIDGE(SFContainerViewControllerParentControllerKey));
   if (parentController) {
     return parentController.navigationController;
   } else {
@@ -164,7 +220,7 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 
 - (UIViewController*)swappedParentViewController
 {
-  UIViewController *parentController = objc_getAssociatedObject(self, SFContainerViewControllerParentControllerKey);
+  UIViewController *parentController = objc_getAssociatedObject(self, AH_BRIDGE(SFContainerViewControllerParentControllerKey));
   if (parentController) {
     return parentController;
   } else {
@@ -174,7 +230,7 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 
 - (UIInterfaceOrientation)swappedInterfaceOrientation
 {
-  UIViewController *parentController = objc_getAssociatedObject(self, SFContainerViewControllerParentControllerKey);
+  UIViewController *parentController = objc_getAssociatedObject(self, AH_BRIDGE(SFContainerViewControllerParentControllerKey));
   if (parentController) {
     return parentController.interfaceOrientation;
   } else {
