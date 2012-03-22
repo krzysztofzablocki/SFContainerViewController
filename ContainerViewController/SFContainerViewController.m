@@ -98,6 +98,7 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 {
   //! remove association just in case
   [self setViewControllers:nil];
+  AH_RELEASE(viewControllers);
   AH_SUPER_DEALLOC;
 }
 
