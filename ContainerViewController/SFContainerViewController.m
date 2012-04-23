@@ -60,6 +60,7 @@
 
 #import "SFContainerViewController.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 
 static NSString * const SFContainerViewControllerParentControllerKey = @"SFContainerViewControllerParentControllerKey";
 
@@ -90,6 +91,20 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
       Method replacedMethod = class_getInstanceMethod([UIViewController class], @selector(interfaceOrientation));
       class_addMethod([UIViewController class], @selector(sf_originalInterfaceOrientation), method_getImplementation(replacedMethod), method_getTypeEncoding(replacedMethod));
       class_replaceMethod([UIViewController class], @selector(interfaceOrientation), method_getImplementation(replacingMethod), method_getTypeEncoding(replacingMethod));
+    }
+
+    {   //! presentModalViewController:animated:
+      Method replacingMethod = class_getInstanceMethod([self class], @selector(swappedPresentModalViewController:animated:));
+      Method replacedMethod = class_getInstanceMethod([UIViewController class], @selector(presentModalViewController:animated:));
+      class_addMethod([UIViewController class], @selector(sf_originalPresentModalViewController:animated:), method_getImplementation(replacedMethod), method_getTypeEncoding(replacedMethod));
+      class_replaceMethod([UIViewController class], @selector(presentModalViewController:animated:), method_getImplementation(replacingMethod), method_getTypeEncoding(replacingMethod));
+    }
+
+    {   //! dismissModalViewControllerAnimated:
+      Method replacingMethod = class_getInstanceMethod([self class], @selector(swappedDismissModalViewControllerAnimated:));
+      Method replacedMethod = class_getInstanceMethod([UIViewController class], @selector(dismissModalViewControllerAnimated:));
+      class_addMethod([UIViewController class], @selector(sf_originalDismissModalViewControllerAnimated:), method_getImplementation(replacedMethod), method_getTypeEncoding(replacedMethod));
+      class_replaceMethod([UIViewController class], @selector(dismissModalViewControllerAnimated:), method_getImplementation(replacingMethod), method_getTypeEncoding(replacingMethod));
     }
   });
 }
@@ -236,6 +251,29 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
     return parentController.interfaceOrientation;
   } else {
     return (UIInterfaceOrientation)[self performSelector:@selector(sf_originalInterfaceOrientation)];
+  }
+}
+
+- (void)swappedPresentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated
+{
+  UIViewController *parentController = objc_getAssociatedObject(self, AH_BRIDGE(SFContainerViewControllerParentControllerKey));
+  if (parentController) {
+    [parentController presentModalViewController:modalViewController animated:animated];
+    objc_setAssociatedObject(modalViewController, AH_BRIDGE(SFContainerViewControllerParentControllerKey), self, OBJC_ASSOCIATION_ASSIGN);
+  } else {
+    objc_msgSend(self, NSSelectorFromString(@"sf_originalPresentModalViewController:animated:"), modalViewController, animated);
+  }
+}
+
+- (void)swappedDismissModalViewControllerAnimated:(BOOL)animated
+{
+  UIViewController *parentController = objc_getAssociatedObject(self, AH_BRIDGE(SFContainerViewControllerParentControllerKey));
+  if (parentController) {
+    UIViewController *modalViewController = AH_RETAIN(self.modalViewController);
+    [parentController dismissModalViewControllerAnimated:animated];
+    objc_setAssociatedObject(modalViewController, AH_BRIDGE(SFContainerViewControllerParentControllerKey), nil, OBJC_ASSOCIATION_ASSIGN);
+  } else {
+    objc_msgSend(self, NSSelectorFromString(@"sf_originalDismissModalViewControllerAnimated:"), animated);
   }
 }
 
