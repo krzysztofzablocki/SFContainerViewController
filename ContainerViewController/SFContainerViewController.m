@@ -214,7 +214,7 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
     }      
     
     AH_RELEASE(viewControllers);
-    viewControllers = [[NSArray arrayWithArray:aViewControllers] retain];
+    viewControllers = AH_RETAIN([NSArray arrayWithArray:aViewControllers]);
     
     //! add association in new view controllers
     for (UIViewController *viewController in viewControllers) {
