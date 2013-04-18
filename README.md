@@ -4,6 +4,8 @@ Purpose
 SFContainerViewController is a UIViewController subclass that can have multiple UIViewController children. No memory problems, if this controller is not visible, it will unload its view and all of his children views.
 From the children view you can use freely navigationController, parentViewController ( will point to container itself ), interfaceOrientation.
 
+[Follow me on twitter][1]
+
 Supported OS & SDK Versions
 -----------------------------
 
@@ -26,3 +28,5 @@ Properties
 
     @property (nonatomic, copy) NSArray *viewControllers;
 Children view controllers of this container. 
+
+  [1]: http://twitter.com/merowing_
