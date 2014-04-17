@@ -31,3 +31,14 @@
 }
 @property (nonatomic, copy) NSArray *viewControllers;
 @end
+
+// This protocol added to prevent "Semantic issue: undeclared selector" compiler warning
+// http://stackoverflow.com/questions/18570907/should-i-fix-xcode-5-semantic-issue-undeclared-selector
+@protocol SFContainerViewControllerSelectors <NSObject>
+- (void) sf_originalNavigationController;
+- (void) sf_originalParentViewController;
+- (void) sf_originalInterfaceOrientation;
+- (void) sf_originalPresentModalViewController:(UIViewController *)controller animated:(BOOL)animated;
+- (void) sf_originalDismissModalViewControllerAnimated:(BOOL)animated;
+@end
+

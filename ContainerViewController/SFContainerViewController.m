@@ -112,7 +112,6 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 - (void)dealloc
 {
   //! remove association just in case
-  [self setViewControllers:nil];
   AH_RELEASE(viewControllers);
   AH_SUPER_DEALLOC;
 }
@@ -258,7 +257,7 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 {
   UIViewController *parentController = objc_getAssociatedObject(self, AH_BRIDGE(SFContainerViewControllerParentControllerKey));
   if (parentController) {
-    [parentController presentModalViewController:modalViewController animated:animated];
+    [parentController presentViewController:modalViewController animated:animated completion:nil];
     objc_setAssociatedObject(modalViewController, AH_BRIDGE(SFContainerViewControllerParentControllerKey), self, OBJC_ASSOCIATION_ASSIGN);
   } else {
     objc_msgSend(self, NSSelectorFromString(@"sf_originalPresentModalViewController:animated:"), modalViewController, animated);
@@ -269,8 +268,8 @@ static NSString * const SFContainerViewControllerParentControllerKey = @"SFConta
 {
   UIViewController *parentController = objc_getAssociatedObject(self, AH_BRIDGE(SFContainerViewControllerParentControllerKey));
   if (parentController) {
-    UIViewController *modalViewController = AH_RETAIN(self.modalViewController);
-    [parentController dismissModalViewControllerAnimated:animated];
+    UIViewController *modalViewController = AH_RETAIN(self.presentedViewController);
+    [parentController dismissViewControllerAnimated:animated completion:nil];
     objc_setAssociatedObject(modalViewController, AH_BRIDGE(SFContainerViewControllerParentControllerKey), nil, OBJC_ASSOCIATION_ASSIGN);
   } else {
     objc_msgSend(self, NSSelectorFromString(@"sf_originalDismissModalViewControllerAnimated:"), animated);
