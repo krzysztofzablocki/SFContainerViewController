@@ -1,3 +1,5 @@
+### UPDATE: I'm no longer using SFContainerViewControllers in any project, it predates native view controller contaiment, since it's been a long time since Apple added it as part of the system now, you should use Apple's implementation.
+
 Purpose
 --------------
 
